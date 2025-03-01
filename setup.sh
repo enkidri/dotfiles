@@ -30,5 +30,7 @@ bash ~/.tmux/plugins/tpm/scripts/install_plugins.sh
 # Symbolic link for bash  #
 ###########################
 ln -sf "${SOURCE_DIRECTORY}/bash/.bashrc" ~
+ln -sf "${SOURCE_DIRECTORY}/bash/.inputrc" ~
 
+###########################
 echo "Setup completed successfully!"

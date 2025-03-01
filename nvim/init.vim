@@ -24,6 +24,7 @@ Plug 'tpope/vim-obsession'        " Save session :Obsess on, :Obsess! off
 Plug 'RRethy/vim-illuminate'      " Illuminates word under cursor
 Plug 'ggandor/leap.nvim'          " Simplified vim motions
 Plug 'tpope/vim-surround'         " Easily surround text with whatever symbol
+Plug 'christoomey/vim-tmux-navigator' " Easier navigation between tmux/vim windows
 
 call plug#end() 
 
@@ -58,10 +59,10 @@ autocmd FileType c,cpp,cc,h setlocal commentstring=//\ %s " Set commenting style
 " ---------- General remapping -------------------
 
 " Resize panes using Ctrl + Left/Right
-nnoremap <C-h> :vertical resize -2<CR>
-nnoremap <C-l> :vertical resize +2<CR>
-nnoremap <C-k> :horizontal resize +2<CR>
-nnoremap <C-j> :horizontal resize -2<CR>
+nnoremap <M-h> :vertical resize -2<CR>
+nnoremap <M-l> :vertical resize +2<CR>
+nnoremap <M-k> :horizontal resize +2<CR>
+nnoremap <M-j> :horizontal resize -2<CR>
 
 " Remove windows line ending shortcut
 nnoremap <F5> :%s/\r//<CR>

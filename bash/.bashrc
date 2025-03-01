@@ -172,6 +172,8 @@ export FZF_DEFAULT_COMMAND='fd --type f --strip-cwd-prefix'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 
 FZF_DEFAULT_OPTS="--preview 'fzf-preview.sh {}' --bind 'focus:transform-header:file --brief {}'"
+
+# Enable fzf bidings
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
 ###############################
