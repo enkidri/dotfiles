@@ -39,7 +39,7 @@ bakwht='\e[47m'   # White
 txtrst='\e[0m'    # Text Reset
 ### COLOR DEFINITION END ###
 
-export PATH="$PATH:/opt/nvim-linux64/bin:/usr/bin/env:/usr/bin/"
+export PATH="$PATH:/opt/nvim-linux64/bin:/usr/bin/env:/usr/bin/:~/bin/"
 export BROWSER='/mnt/c/Program Files (x86)/Microsoft/Edge/Application/msedge.exe'
 export VISUAL=nvim
 export EDITOR="$VISUAL"
