@@ -1,0 +1,12 @@
+# Set up Vim-style tab completion
+TAB: menu-complete
+set show-all-if-ambiguous on
+
+# Use GNU ls colors when tab-completing files
+set colored-stats on
+
+set colored-completion-prefix on
+
+# Edit with Vi keybindings
+set editing-mode vi
+set keymap vi
