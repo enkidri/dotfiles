@@ -1,21 +1,34 @@
 #!/bin/bash
 
+# NOTE: Assumes that you are running on bash
+
 # Exit immediately if a command exits with a non-zero status
 set -e
 
 SOURCE_DIRECTORY=$(dirname "$(realpath "$0")")
-
-# Symbolic link for neovim
+###########################
+# Symbolic link for neovim#
+###########################
 # NOTE: Will likely require more configuration outside this
 rm -rf $TARGET_DIRECTORY/nvim
 ln -sf "${SOURCE_DIRECTORY}/nvim" ~/.config
 
-# Symbolic link for tmux
-if [ ! -d "~/.tmux/plugins/tpm" ]; then
-  mkdir -p ~/.tmux/plugins/tpm
-  git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+###########################
+# Symbolic link for tmux  #
+###########################
+if [ ! -d "$HOME/.tmux/plugins/tpm" ]; then
+  mkdir -p "$HOME/.tmux/plugins/tpm"
+  git clone https://github.com/tmux-plugins/tpm "$HOME/.tmux/plugins/tpm"
 fi
 ln -sf "${SOURCE_DIRECTORY}/tmux/.tmux.conf" ~
-~/.tmux/plugins/tpm/scripts/install_plugins.sh
+set +e 
+tmux source ~/.tmux.conf 
+set -e
+bash ~/.tmux/plugins/tpm/scripts/install_plugins.sh
+
+###########################
+# Symbolic link for bash  #
+###########################
+ln -sf "${SOURCE_DIRECTORY}/bash/.bashrc" ~
 
 echo "Setup completed successfully!"
