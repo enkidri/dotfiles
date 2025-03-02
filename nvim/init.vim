@@ -25,6 +25,7 @@ Plug 'RRethy/vim-illuminate'      " Illuminates word under cursor
 Plug 'ggandor/leap.nvim'          " Simplified vim motions
 Plug 'tpope/vim-surround'         " Easily surround text with whatever symbol
 Plug 'christoomey/vim-tmux-navigator' " Easier navigation between tmux/vim windows
+Plug 'mbbill/undotree'            " Undotree
 
 call plug#end() 
 
@@ -258,4 +259,18 @@ require('illuminate').configure({
 EOF
 
 "--------- NVIM LEAP--------------------------
-lua require('leap').create_default_mappings()
+nnoremap s <Plug>(leap-forward)
+xnoremap s <Plug>(leap-forward)
+onoremap s <Plug>(leap-forward)
+
+nnoremap S <Plug>(leap-backward)
+xnoremap S <Plug>(leap-backward)
+onoremap S <Plug>(leap-backward)
+
+" Conflicts with vim surround. Not needed for now.
+" nnoremap gs <Plug>(leap-from-window)
+" xnoremap gs <Plug>(leap-from-window)
+" onoremap gs <Plug>(leap-from-window)
+
+"--------- UNDOTREE --------------------------
+nnoremap <F4> :UndotreeToggle<CR>

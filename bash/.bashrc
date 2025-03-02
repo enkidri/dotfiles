@@ -44,6 +44,9 @@ export BROWSER='/mnt/c/Program Files (x86)/Microsoft/Edge/Application/msedge.exe
 export VISUAL=nvim
 export EDITOR="$VISUAL"
 
+# Execute starship
+eval "$(starship init bash)"
+
 # If not running interactively, don't do anything
 case $- in
     *i*) ;;
@@ -155,11 +158,11 @@ cd() {
 ###############################
 ### CHANGE THE PROMPT LAYOUT###
 ###############################
-print_before_the_prompt () {
-    printf " $txtred%s: $bldgrn%s $txtpur%s\n$txtrst" "$USER" "$PWD" "$(vcprompt)"
-}
-PROMPT_COMMAND=print_before_the_prompt
-PS1='$ '
+# print_before_the_prompt () {
+#     printf " $txtred%s: $bldgrn%s $txtpur%s\n$txtrst" "$USER" "$PWD" "$(vcprompt)"
+# }
+# PROMPT_COMMAND=print_before_the_prompt
+# PS1='$ '
 
 ###############################
 ###     FZF CONFIGURATION   ###
