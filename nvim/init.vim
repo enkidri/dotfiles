@@ -21,7 +21,6 @@ Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'tpope/vim-fugitive'         " Git commands
 Plug 'lukas-reineke/indent-blankline.nvim' "Indent guides
 Plug 'tpope/vim-obsession'        " Save session :Obsess on, :Obsess! off
-Plug 'RRethy/vim-illuminate'      " Illuminates word under cursor
 Plug 'ggandor/leap.nvim'          " Simplified vim motions
 Plug 'tpope/vim-surround'         " Easily surround text with whatever symbol
 Plug 'christoomey/vim-tmux-navigator' " Easier navigation between tmux/vim windows
@@ -92,7 +91,7 @@ let g:ale_disable_lsp = 1 " This is absolutely NEEDED to avoid conflicts with co
 let g:ale_enabled = 1
 
 "------------COC VIM settings-------------------
-let g:coc_global_extensions = ['coc-clangd', 'coc-json', 'coc-prettier']
+let g:coc_global_extensions = ['coc-clangd', 'coc-json', 'coc-prettier', 'coc-highlight']
 " Tab completation
 inoremap <silent><expr> <TAB>
       \ coc#pum#visible() ? coc#pum#next(1) :
@@ -214,50 +213,6 @@ require("ibl").setup { scope = { highlight = highlight } }
 hooks.register(hooks.type.SCOPE_HIGHLIGHT, hooks.builtin.scope_highlight_from_extmark)
 EOF
 
-"-----------Vim Illuminates------------------
-lua << EOF
-require('illuminate').configure({
-    providers = {
-        'lsp',
-        'treesitter',
-        'regex',
-    },
-    delay = 0,
-    filetype_overrides = {},
-    filetypes_denylist = {
-        'dirbuf',
-        'dirvish',
-        'fugitive',
-    },
-    filetypes_allowlist = {},
-    modes_denylist = {},
-    modes_allowlist = {},
-    providers_regex_syntax_denylist = {},
-    providers_regex_syntax_allowlist = {},
-    under_cursor = false,
-    large_file_cutoff = 10000,
-    large_file_overrides = nil,
-    min_count_to_highlight = 1,
-    should_enable = function(bufnr) return true end,
-    case_insensitive_regex = false,
-    disable_keymaps = false,
-})
-  -- change the highlight style
-  vim.api.nvim_set_hl(0, "IlluminatedWordText", { link = "Visual" })
-  vim.api.nvim_set_hl(0, "IlluminatedWordRead", { link = "Visual" })
-  vim.api.nvim_set_hl(0, "IlluminatedWordWrite", { link = "Visual" })
-  
-  --- auto update the highlight style on colorscheme change
-  vim.api.nvim_create_autocmd({ "ColorScheme" }, {
-    pattern = { "*" },
-    callback = function(ev)
-      vim.api.nvim_set_hl(0, "IlluminatedWordText", { link = "Visual" })
-      vim.api.nvim_set_hl(0, "IlluminatedWordRead", { link = "Visual" })
-      vim.api.nvim_set_hl(0, "IlluminatedWordWrite", { link = "Visual" })
-    end
-})
-EOF
-
 "--------- NVIM LEAP--------------------------
 nnoremap s <Plug>(leap-forward)
 xnoremap s <Plug>(leap-forward)
@@ -274,3 +229,6 @@ onoremap S <Plug>(leap-backward)
 
 "--------- UNDOTREE --------------------------
 nnoremap <F4> :UndotreeToggle<CR>
+
+"--------------------------------------------
+autocmd CursorHold * silent call CocActionAsync('highlight')
