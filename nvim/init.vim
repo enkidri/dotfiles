@@ -158,6 +158,10 @@ endfunction
 " coc-clangd specific mapping
 nnoremap <silent> <C-s> :CocCommand clangd.switchSourceHeader<CR>
 
+" Format selected text
+vmap <leader>f  <Plug>(coc-format-selected)
+nmap <leader>f  <Plug>(coc-format-selected)
+
 " -----------LIGHTLINE SETTINGS----------------
 let g:lightline = {
 \ 'colorscheme': 'wombat',
