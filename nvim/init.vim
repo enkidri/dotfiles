@@ -9,6 +9,7 @@ endif
 call plug#begin('~/.vim/plugged') 
 " C++ related plugins 
 Plug 'scrooloose/nerdtree'        " File explorer 
+Plug 'ryanoasis/vim-devicons'     " Adds dev icons to file explorer and more
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } } " Fuzzy finder 
 Plug 'junegunn/fzf.vim'           " FZF commands for Vim 
 Plug 'itchyny/lightline.vim'      " Lightweight satusline 
@@ -158,9 +159,10 @@ endfunction
 " coc-clangd specific mapping
 nnoremap <silent> <C-s> :CocCommand clangd.switchSourceHeader<CR>
 
-" Format selected text
-vmap <leader>f  <Plug>(coc-format-selected)
-nmap <leader>f  <Plug>(coc-format-selected)
+" ----------FZF VIM bindings ------------------
+nnoremap <leader>f :Files<CR>
+nnoremap <leader>b :Buffers<CR>
+
 
 " -----------LIGHTLINE SETTINGS----------------
 let g:lightline = {
