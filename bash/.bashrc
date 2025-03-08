@@ -159,10 +159,18 @@ cd() {
 ### CHANGE THE PROMPT LAYOUT###
 ###############################
 print_before_the_prompt () {
-    printf " $bldgrn%s $txtpur%s\n$txtrst" "$PWD" "$(vcprompt)"
+  local relative_path="$PWD"
+
+  if [[ "$PWD" == "$HOME" ]]; then
+    relative_path="~"
+  elif [[ "$PWD" == "$HOME/"* ]]; then
+    relative_path="~/${PWD#$HOME/}"
+  fi
+
+  printf " $bldgrn%s $txtpur%s\n$txtrst" "$relative_path" "$(vcprompt)"
 }
 PROMPT_COMMAND=print_before_the_prompt
-PS1='> '
+PS1='\[\e[32m\]❯\[\e[0m\] '
 
 ###############################
 ###     FZF CONFIGURATION   ###
