@@ -159,7 +159,7 @@ cd() {
 ### CHANGE THE PROMPT LAYOUT###
 ###############################
 print_before_the_prompt () {
-    printf " $txtred%s: $bldgrn%s $txtpur%s\n$txtrst" "$USER" "$PWD" "$(vcprompt)"
+    printf " $bldgrn%s $txtpur%s\n$txtrst" "$PWD" "$(vcprompt)"
 }
 PROMPT_COMMAND=print_before_the_prompt
 PS1='> '
