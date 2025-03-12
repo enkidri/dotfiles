@@ -1,6 +1,7 @@
 # Set up Vim-style tab completion
 TAB: menu-complete
 set show-all-if-ambiguous on
+set completion-ignore-case on
 
 # Use GNU ls colors when tab-completing files
 set colored-stats on
