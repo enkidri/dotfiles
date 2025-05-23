@@ -12,7 +12,8 @@ Plug 'scrooloose/nerdtree'        " File explorer
 Plug 'ryanoasis/vim-devicons'     " Adds dev icons to file explorer and more
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } } " Fuzzy finder 
 Plug 'junegunn/fzf.vim'           " FZF commands for Vim 
-Plug 'itchyny/lightline.vim'      " Lightweight satusline 
+Plug 'nvim-lualine/lualine.nvim'  " Custumizable status bar
+Plug 'nvim-tree/nvim-web-devicons' "Add icons to status bar
 Plug 'dense-analysis/ale'         " Syntax checker
 Plug 'airblade/vim-gitgutter'     " Git diff in the gutter 
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -159,23 +160,66 @@ endfunction
 " coc-clangd specific mapping
 nnoremap <silent> <C-s> :CocCommand clangd.switchSourceHeader<CR>
 
-" ----------FZF VIM bindings ------------------
+" ----------FZF VIM ------------------
 nnoremap <leader>f :Files<CR>
 nnoremap <leader>b :Buffers<CR>
+nnoremap <leader>r :RG<CR>
 
-
-" -----------LIGHTLINE SETTINGS----------------
-let g:lightline = {
-\ 'colorscheme': 'wombat',
-\ 'active': {
-\   'left': [ [ 'mode', 'paste' , 'gitbranch'],
-\             [ 'cocstatus', 'readonly', 'filename', 'modified' ] ]
-\ },
-\ 'component_function': {
-\   'cocstatus': 'coc#status',
-\   'gitbranch': 'FugitiveHead'
-\ },
-\ }
+" -----------LUALINE SETTINGS----------------
+lua << END
+require('lualine').setup {
+  options = {
+    icons_enabled = true,
+    theme = 'wombat',
+    component_separators = { left = '', right = ''},
+    section_separators = { left = '', right = ''},
+    disabled_filetypes = {
+      statusline = {},
+      winbar = {},
+    },
+    ignore_focus = {},
+    always_divide_middle = true,
+    always_show_tabline = false,
+    globalstatus = false,
+    refresh = {
+      statusline = 100,
+      tabline = 100,
+      winbar = 100,
+    }
+  },
+  sections = {
+    lualine_a = {'mode'},
+    lualine_b = {'branch', 'diff', 'diagnostics'},
+    lualine_c = {{'filename', path = 1}},
+    lualine_x = {'encoding', 'fileformat', 'filetype'},
+    lualine_y = {'progress'},
+    lualine_z = {'location'}
+  },
+  inactive_sections = {
+    lualine_a = {},
+    lualine_b = {},
+    lualine_c = {'filename'},
+    lualine_x = {'location'},
+    lualine_y = {},
+    lualine_z = {}
+  },
+  tabline = {
+      lualine_a = {
+        {
+          'tabs',
+          tab_max_length = 300,
+          max_length = vim.o.columns,
+          mode = 2,
+          path = 0,
+          show_modified_status = true,
+        }
+      }
+    },
+  winbar = {},
+  inactive_winbar = {},
+  extensions = {}
+}
+END
 " ----------TREESITTER SETTINGS---------------
 " Enable treesitter highlighting syntax
 "
