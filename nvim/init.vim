@@ -61,10 +61,8 @@ autocmd FileType c,cpp,cc,h setlocal commentstring=//\ %s " Set commenting style
 " ---------- General remapping -------------------
 
 " Resize panes using Ctrl + Left/Right
-nnoremap <M-h> :vertical resize -2<CR>
-nnoremap <M-l> :vertical resize +2<CR>
-nnoremap <M-k> :horizontal resize +2<CR>
-nnoremap <M-j> :horizontal resize -2<CR>
+nnoremap <M-[> :vertical resize -2<CR>
+nnoremap <M-]> :vertical resize +2<CR>
 
 " Remove windows line ending shortcut
 nnoremap <F5> :%s/\r//<CR>
