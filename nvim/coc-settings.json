@@ -4,11 +4,7 @@
   "clangd.path": "~/.config/coc/extensions/coc-clangd-data/install/19.1.2/clangd_19.1.2/bin/clangd",
   "inlayHint.enable": false,
   "prettier.disableLanguages": ["yaml", "txt", "cmake"],
-  "pylsp.builtin.enableInstallPylspMypy": false,
-  "pylsp.builtin.enableInstallPylsIsort": false,
-  "pylsp.builtin.enableInstallPythonLspBlack": false,
-  "pylsp.builtin.enableInstallPylspRope": false,
-  "pylsp.builtin.enableInstallPythonLspRuff": false,
-  "disable": ["python"],
-  "clangd.arguments": ["--log=verbose"]
+  "clangd.arguments": ["--log=verbose"],
+  "prettier.proseWrap": "always",
+  "prettier.printWidth": 120
 }

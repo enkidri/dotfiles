@@ -27,6 +27,8 @@ Plug 'ggandor/leap.nvim'          " Simplified vim motions
 Plug 'tpope/vim-surround'         " Easily surround text with whatever symbol
 Plug 'christoomey/vim-tmux-navigator' " Easier navigation between tmux/vim windows
 Plug 'mbbill/undotree'            " Undotree
+Plug 'lervag/vimtex'              " Latex plugin
+Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && npx --yes yarn install' }
 
 call plug#end() 
 
@@ -49,7 +51,7 @@ set cursorcolumn
 set laststatus=2
 set path=/usr/include
 set t_vb= " Turns off the bell sound
-set cc=80
+set cc=80,120
 set tabstop=2 " Google style compliance
 set shiftwidth=2 " Google style compliance
 set autoread    " Reads text after switching branch
@@ -277,6 +279,18 @@ onoremap S <Plug>(leap-backward)
 
 "--------- UNDOTREE --------------------------
 nnoremap <F4> :UndotreeToggle<CR>
+
+"--------- FUGITIVE --------------------------
+nnoremap <leader>1 :diffg LO<CR>
+nnoremap <leader>2 :diffg RE<CR>
+
+"------ VimTex-------------------------
+" Viewer options: One may configure the viewer either by specifying a built-in
+" viewer method:
+let g:vimtex_view_method = 'zathura_simple'
+
+"------ Markdown preview-------------------------
+let g:mkdp_refresh_slow = 1
 
 "--------------------------------------------
 autocmd CursorHold * silent call CocActionAsync('highlight')

@@ -1,0 +1,261 @@
+/**
+ * Import the Nerdfonts icon font.
+ * Ref https://www.nerdfonts.com/cheat-sheet for a cheatsheet of available Nerdfonts icons.
+ */
+@import "https://www.nerdfonts.com/assets/css/webfont.css";
+
+i {
+  color: rgb(115 130 175 / 95%);
+  margin-right: 8px;
+}
+
+body {
+  color: rgb(255 255 255 / 90%);
+  overflow: hidden;
+  font-size: 14px;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  border-radius: 13px;
+}
+
+@keyframes flash {
+  from {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+#root {
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(50, 20, 20, 0.7));
+  user-select: none;
+  border-radius: 43px;
+}
+
+.app {
+  display: grid;
+  grid-template-columns: 1fr 0.5fr 1fr;
+  align-items: center;
+  height: 100%;
+  font-family: Iosevka Nerd Font SemiBold, monospace;
+  padding: 5px 8px;
+  border: 3px solid #cba6f7;
+  border-radius: 43px;
+}
+
+.left,
+.center,
+.right {
+  display: flex;
+  align-items: center;
+}
+
+.center {
+  justify-self: end;
+  font-size: 14px;
+  margin-right: 5px;
+  flix-shrink: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.right {
+  justify-content: end;
+}
+
+.logo,
+.binding-mode,
+.tiling-direction,
+.network,
+.memory,
+.date,
+.volume,
+.cpu,
+.cycle_count,
+.battery {
+  margin-right: 5px;
+}
+
+.network,
+.cycle_count,
+.uptime,
+.memory,
+.date,
+.cpu,
+.battery,
+.weather {
+  background: rgb(255 255 255 / 7%);
+  padding: 2px 6px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 30px;
+}
+
+.audio {
+  color: cyan;
+}
+
+.volume {
+  background: rgb(255 255 255 / 7%);
+  padding: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 50px;
+}
+
+.btn {
+  border: none;
+  background: transparent;
+  color: white;
+  cursor: pointer;
+}
+
+.btn1 {
+  border: none;
+  background: transparent;
+  color: violet;
+  cursor: pointer;
+}
+
+.workspaces {
+  display: flex;
+  align-items: center;
+}
+
+.workspace {
+  background: rgba(255, 255, 255, 0.05);
+  color: white;
+  border: none;
+  border-radius: 7px;
+  cursor: pointer;
+  height: 1.7em;
+
+  &.displayed {
+    background: rgba(255, 255, 255, 0.15);
+  }
+
+  &.focused,
+  &:hover {
+    color: white;
+    /* border: 1px solid #cba6f7; */
+  }
+}
+
+.workspace:not(:nth-child(7)) {
+  margin-right: 15px;
+}
+
+.binding-mode,
+.tiling-direction {
+  background: rgb(255 255 255 / 15%);
+  color: rgb(255 255 255 / 90%);
+  border-radius: 10px;
+  line-height: 1;
+  padding: 4px 5px;
+  border: 0;
+  cursor: pointer;
+}
+
+.binding-mode {
+  margin-right: 4px;
+}
+
+.orange {
+  color: #ffa500;
+}
+
+.red {
+  color: #ff4500;
+}
+
+.green {
+  color: #33ff57;
+}
+
+.cpu {
+  color: #1e90ff;
+}
+
+.stack {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: rgb(255 255 255 / 7%);
+  border-radius: 10px;
+  padding: 0px 8px;
+  font-size: 12px;
+  margin-right: 5px;
+}
+
+.stack-nw-speed {
+  display: flex;
+  width: 100px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: rgb(255 255 255 / 7%);
+  border-radius: 10px;
+  padding: 0px 8px;
+  font-size: 12px;
+  margin-right: 5px;
+}
+
+.date {
+  font-size: 2px;
+}
+
+.cpu1 {
+  color: white;
+}
+
+.cpu .high-usage {
+  color: white;
+  animation: flash 0.5s infinite;
+}
+
+.memory {
+  color: white;
+}
+
+.memory .high-usage {
+  color: white;
+  animation: flash 0.5s infinite;
+}
+
+.battery {
+  position: relative;
+  /* color: #ffa500; */
+}
+
+.battery .charging-icon {
+  position: absolute;
+  font-size: 8px;
+  left: 1px;
+  top: 3px;
+  color: white;
+}
+
+.cycle_count1 {
+  color: yellowgreen;
+}
+
+.uptime1 {
+  color: white;
+  background: rgb(255 255 255 / 7%);
+}
+
+.weather {
+  color: yellow;
+}
