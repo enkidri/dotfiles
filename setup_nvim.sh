@@ -6,6 +6,7 @@
 set -e
 
 SOURCE_DIRECTORY=$(dirname "$(realpath "$0")")
+TARGET_DIRECTORY="$HOME/.config"
 ###########################
 # Symbolic link for neovim#
 ###########################
