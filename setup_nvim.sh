@@ -12,11 +12,12 @@ TARGET_DIRECTORY="$HOME/.config"
 ###########################
 
 # Install the newest version of nodejs for coc.nvim
-curl -sL install-node.vercel.app/lts | bash
+sudo curl -sL install-node.vercel.app/lts | sudo bash
 
 # NOTE: Will likely require more configuration outside this
 rm -rf $TARGET_DIRECTORY/nvim
 ln -sf "${SOURCE_DIRECTORY}/nvim" ~/.config
+nvim --headless +PlugInstall +qall
 
 ###########################
 echo "Setup completed successfully!"
