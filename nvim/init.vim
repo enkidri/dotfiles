@@ -91,9 +91,13 @@ highlight Normal guibg=NONE ctermbg=NONE
 "------------ ALE -----------------------------
 let g:ale_disable_lsp = 1 " This is absolutely NEEDED to avoid conflicts with coc-nvim
 let g:ale_enabled = 1
+let g:ale_linters = {
+\   'python': []
+\}
+
 
 "------------COC VIM settings-------------------
-let g:coc_global_extensions = ['coc-clangd', 'coc-json', 'coc-prettier', 'coc-highlight']
+let g:coc_global_extensions = ['coc-clangd', 'coc-json', 'coc-prettier', 'coc-highlight', '@yaegassy/coc-ruff']
 " Tab completation
 inoremap <silent><expr> <TAB>
       \ coc#pum#visible() ? coc#pum#next(1) :

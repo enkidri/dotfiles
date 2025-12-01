@@ -29,6 +29,7 @@ fi
 alias fd=fdfind
 source $HOME/.bash_aliases
 
+bindkey -v
 bindkey '^ ' autosuggest-accept
 
 # MACROS
