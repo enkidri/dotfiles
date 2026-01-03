@@ -50,7 +50,7 @@ require("lazy").setup({
 
 	require("plugins.leap"),
 
-	require("plugins.figet"),
+	require("plugins.fidget"),
 
 	--  Here are some plugins that could be included.
 	--
