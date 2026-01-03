@@ -94,7 +94,11 @@ let g:ale_enabled = 1
 let g:ale_linters = {
 \   'python': []
 \}
-
+let g:ale_fixers = {
+\   'rust': ['rustfmt'],
+\}
+let g:ale_fix_on_save = 1
+let g:ale_rust_rustfmt_options = '--config max_width=80'
 
 "------------COC VIM settings-------------------
 let g:coc_global_extensions = ['coc-clangd', 'coc-json', 'coc-prettier', 'coc-highlight', '@yaegassy/coc-ruff']

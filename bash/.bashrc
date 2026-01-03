@@ -215,3 +215,4 @@ IGNOREEOF=10   # Shell only exists after the 10th consecutive Ctrl-d
 if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ]; then
   tmux attach -t default || tmux new -s default
 fi
+. "$HOME/.cargo/env"
