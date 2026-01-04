@@ -53,7 +53,8 @@ vim.o.splitbelow = true
 --   See `:help lua-options`
 --   and `:help lua-options-guide`
 vim.o.list = true
-vim.opt.listchars = { tab = "» ", trail = "·", nbsp = "␣" }
+-- vim.opt.listchars = { tab = "» ", trail = "·", nbsp = "␣" }
+vim.opt.listchars = { tab = "  ", trail = "·", nbsp = "␣" }
 
 -- Preview substitutions live, as you type!
 vim.o.inccommand = "split"
@@ -83,7 +84,8 @@ vim.opt.colorcolumn = { "80", "120" }
 vim.opt.confirm = false
 
 -- Global floating window transparency
-vim.o.winblend = 20
+vim.o.winblend = 2
+vim.o.pumblend = 2
 
 -- Solid background for :Lazy float
 vim.api.nvim_set_hl(0, "LazyNormal", { bg = "#1d2021" })
