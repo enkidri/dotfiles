@@ -87,7 +87,4 @@ vim.opt.confirm = false
 vim.o.winblend = 2
 vim.o.pumblend = 2
 
--- Solid background for :Lazy float
-vim.api.nvim_set_hl(0, "LazyNormal", { bg = "#1d2021" })
-
 -- vim: ts=2 sts=2 sw=2 et
