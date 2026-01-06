@@ -38,8 +38,23 @@ bindkey '^ ' autosuggest-accept
 cr() {
   # Compile without speed optimization
   g++ "$1" -o temp_bin || return 1
+  
+  # Execute the binary
+  ./temp_bin
+  
+  # Capture the exit code into a custom variable
+  local exit_code=$?
+  
+  # Clean up the binary
+  rm -f temp_bin
+  
+  # Return the actual exit code of your program
+  return $exit_code
+}
+
+crf() {
   # Compile with speed optimization
-  # g++ "$1" -O3 -DNDEBUG -o temp_bin || return 1
+  g++ "$1" -O3 -DNDEBUG -o temp_bin || return 1
   
   # Execute the binary
   ./temp_bin
