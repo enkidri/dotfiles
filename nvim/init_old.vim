@@ -69,6 +69,18 @@ nnoremap <M-]> :vertical resize +2<CR>
 " Remove windows line ending shortcut
 nnoremap <F5> :%s/\r//<CR>
 
+" ---------- Copilot bindings -------------------
+" Disable the default <Tab> mapping for Copilot
+let g:copilot_no_tab_map = v:true
+
+" Prevent Copilot from trying to restore the default map
+" let g:copilot_assume_mapped = v:true
+
+" Map <Tab> followed by <Space> to accept the suggestion
+" The "\<CR>" is the fallback; if no suggestion exists, it will act like Enter.
+" You can change it to "" if you want it to do nothing when no suggestion is visible.
+imap <silent><script><expr> <C-Space> copilot#Accept("\<CR>")
+
 " -------- NERDTree settings -------------------
 nnoremap <C-n> :NERDTreeToggle<CR>
 nnoremap <C-f> :NERDTreeFind<CR>
