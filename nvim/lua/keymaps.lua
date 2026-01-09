@@ -55,4 +55,7 @@ vim.keymap.set("n", "<F5>", "<cmd>%s/\\r//<cr>", { desc = "Remove Windows line e
 -- Open lazy float window
 vim.keymap.set("n", "<leader>lz", ":Lazy<cr>", { desc = "Opens :[L]a[z]y" })
 
+-- Force C-c to trigger the same logic as Esc
+vim.keymap.set("i", "<C-c>", "<Esc>")
+
 -- vim: ts=2 sts=2 sw=2 et

@@ -61,6 +61,8 @@ return {
 				-- Custom overrides
 				["<C-space>"] = { "accept", "fallback" }, -- Accept completion with Ctrl+Space
 				["<C-y>"] = { "show", "show_documentation", "hide_documentation" }, -- Ctrl+Space binding with this.
+				["<C-j>"] = { "select_next", "fallback" },
+				["<C-k>"] = { "select_prev", "fallback" },
 
 				-- For more advanced Luasnip keymaps (e.g. selecting choice nodes, expansion) see:
 				--    https://github.com/L3MON4D3/LuaSnip?tab=readme-ov-file#keymaps
@@ -77,7 +79,7 @@ return {
 				-- Optionally, set `auto_show = true` to show the documentation after a delay.
 				documentation = { auto_show = false, auto_show_delay_ms = 500 },
 				ghost_text = {
-					enabled = true,
+					enabled = false,
 				},
 			},
 
