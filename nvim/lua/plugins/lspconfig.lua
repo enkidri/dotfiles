@@ -223,6 +223,7 @@ return {
 			local servers = {
 				clangd = {},
 				pyright = {},
+				rust_analyzer = {},
 				-- gopls = {},
 				-- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
 				--
