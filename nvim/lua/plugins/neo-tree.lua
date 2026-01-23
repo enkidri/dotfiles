@@ -12,6 +12,7 @@ return {
 	lazy = false,
 	keys = {
 		{ "<C-n>", ":Neotree toggle<CR>", desc = "NeoTree toggle", silent = true },
+		{ "<C-f>", ":Neotree reveal<CR>", desc = "NeoTree reveal current file", silent = true },
 	},
 	opts = {
 		window = {
