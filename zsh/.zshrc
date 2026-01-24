@@ -32,6 +32,9 @@ source $HOME/.bash_aliases
 bindkey -v
 bindkey '^ ' autosuggest-accept
 
+# ALIAS
+alias gr='cd $(git rev-parse --show-toplevel)'
+
 # MACROS
 
 # Compiles and run a C++ program
