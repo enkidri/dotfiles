@@ -58,6 +58,9 @@ vim.keymap.set("n", "<leader>lz", ":Lazy<cr>", { desc = "Opens :[L]a[z]y" })
 -- Force C-c to trigger the same logic as Esc
 vim.keymap.set("i", "<C-c>", "<Esc>")
 
+-- Fugitive specific: You can map a key to always open it vertically
+vim.keymap.set("n", "<leader>gd", "<cmd>vertical Gdiffsplit!<CR>", { desc = "Git Diff Split" })
+
 -- Normal Mode mappings (for single hunk under cursor)
 vim.keymap.set("n", "gdh", "<cmd>diffget //2<CR>", { desc = "Diff Get Left (Ours)" })
 vim.keymap.set("n", "gdl", "<cmd>diffget //3<CR>", { desc = "Diff Get Right (Theirs)" })
