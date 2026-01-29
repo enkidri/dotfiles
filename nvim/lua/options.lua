@@ -87,4 +87,14 @@ vim.opt.confirm = false
 vim.o.winblend = 2
 vim.o.pumblend = 2
 
+vim.opt.autoread = true
+
+-- Trigger autoread when the buffer or Neovim gains focus
+vim.api.nvim_create_autocmd({ "BufEnter", "CursorHold", "CursorHoldI", "FocusGained", "VimResume" }, {
+	command = "if mode() != 'c' | checktime | endif",
+	pattern = { "*" },
+})
+
+vim.opt.termguicolors = true
+
 -- vim: ts=2 sts=2 sw=2 et
