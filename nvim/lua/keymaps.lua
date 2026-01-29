@@ -58,4 +58,12 @@ vim.keymap.set("n", "<leader>lz", ":Lazy<cr>", { desc = "Opens :[L]a[z]y" })
 -- Force C-c to trigger the same logic as Esc
 vim.keymap.set("i", "<C-c>", "<Esc>")
 
+-- Normal Mode mappings (for single hunk under cursor)
+vim.keymap.set("n", "gdh", "<cmd>diffget //2<CR>", { desc = "Diff Get Left (Ours)" })
+vim.keymap.set("n", "gdl", "<cmd>diffget //3<CR>", { desc = "Diff Get Right (Theirs)" })
+
+-- Visual Mode mappings (for highlighted lines)
+vim.keymap.set("v", "gdh", ":diffget //2<CR>", { desc = "Diff Get Left (Ours) - Visual" })
+vim.keymap.set("v", "gdl", ":diffget //3<CR>", { desc = "Diff Get Right (Theirs) - Visual" })
+
 -- vim: ts=2 sts=2 sw=2 et
