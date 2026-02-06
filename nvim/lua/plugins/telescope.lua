@@ -87,6 +87,9 @@ return {
 			vim.keymap.set("n", "<leader>sr", builtin.resume, { desc = "[S]earch [R]esume" })
 			vim.keymap.set("n", "<leader>s.", builtin.oldfiles, { desc = '[S]earch Recent Files ("." for repeat)' })
 			vim.keymap.set("n", "<leader>b", builtin.buffers, { desc = "[ ] Find existing [B]uffers" })
+			vim.keymap.set("n", "<leader>sf", function()
+				require("telescope.builtin").grep_string({ search = "" })
+			end, { desc = "[S]earch [F]uzzy content" })
 
 			-- Slightly advanced example of overriding default behavior and theme
 			vim.keymap.set("n", "<leader>/", function()
