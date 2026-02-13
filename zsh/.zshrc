@@ -71,3 +71,6 @@ crf() {
   # Return the actual exit code of your program
   return $exit_code
 }
+
+# opencode
+export PATH=/home/setata1/.opencode/bin:$PATH
