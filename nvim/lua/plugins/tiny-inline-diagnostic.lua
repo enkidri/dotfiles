@@ -14,7 +14,7 @@ return {
 				-- This ensures it doesn't overlap with blink-cmp or other floats
 				add_vertical_space = true,
 				-- Show diagnostics at multiple lines
-				multilines = true,
+				multilines = false,
 				show_all_diags_on_cursorline = false,
 			},
 		})
